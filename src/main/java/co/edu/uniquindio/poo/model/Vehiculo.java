@@ -1,21 +1,22 @@
 package co.edu.uniquindio.poo.model;
 
-public class Vehiculo {
+public class Vehiculo implements Combustible {
     private  String marca, condicion, modelo, cambios;
-    private  int cilindraje, VelMaxima, numeroPasajeros;
-    private Combustible combustible;
+    private  int cilindraje, VelMaxima, numeroPasajeros, precio;
+   
 
-    public Vehiculo(String marca, String condicion, String modelo, String cambios, int cilindraje, int velMaxima, int numeroPasajeros, TipoCombustible tipoCombustible) {
+    public Vehiculo(String marca, String condicion, String modelo, String cambios, int cilindraje, int velMaxima, int numeroPasajeros, TipoCombustible tipoCombustible, int precio){
         this.marca = marca;
         this.condicion = condicion;
         this.modelo = modelo;
         this.cambios = cambios;
         this.cilindraje = cilindraje;
-        VelMaxima = velMaxima;
+        this.VelMaxima = velMaxima;
         this.numeroPasajeros = numeroPasajeros;
-        combustible = new Combustible(tipoCombustible);
+        this.precio = precio;
+               
     }
-
+    
     public String getMarca() {
         return marca;
     }
@@ -70,6 +71,14 @@ public class Vehiculo {
 
     public void setNumeroPasajeros(int numeroPasajeros) {
         this.numeroPasajeros = numeroPasajeros;
+    }
+
+    public int getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(int precio) {
+        this.precio = precio;
     }
 
 
