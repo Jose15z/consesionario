@@ -1,36 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.canvas.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="617.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="ORANGE" height="53.0" layoutX="-25.0" stroke="TRANSPARENT" strokeType="INSIDE" width="668.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="ORANGE" height="53.0" layoutX="-25.0" layoutY="349.0" stroke="TRANSPARENT" strokeType="INSIDE" width="668.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d3f5f5" height="297.0" layoutX="-3.0" layoutY="59.0" stroke="TRANSPARENT" strokeType="INSIDE" width="624.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff9bdb" height="46.0" layoutX="151.0" layoutY="83.0" stroke="BLACK" strokeType="INSIDE" width="298.0" />
       <Label layoutX="120.0" layoutY="-7.0" prefHeight="80.0" prefWidth="518.0" text="TU CARRO UQ">
          <font>
             <Font name="ROGFonts-Regular" size="42.0" />
          </font>
       </Label>
-      <Label layoutX="213.0" layoutY="90.0" prefHeight="33.0" prefWidth="188.0" style="-fx-font: minecraftia;" text="Iniciar sesion como:">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff9bdb" height="46.0" layoutX="-2.0" layoutY="82.0" stroke="#f85ec2" strokeLineCap="BUTT" strokeType="OUTSIDE" width="298.0" />
+      <Label layoutX="152.0" layoutY="89.0" prefHeight="33.0" prefWidth="188.0" style="-fx-font: minecraftia;" text="Empleado:">
          <font>
             <Font name="Tw Cen MT Condensed" size="30.0" />
          </font>
       </Label>
-      <Button layoutX="81.0" layoutY="192.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="141.0" text="Empleado">
-         <font>
-            <Font name="Tw Cen MT Condensed" size="24.0" />
-         </font>
-      </Button>
-      <Button layoutX="379.0" layoutY="192.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="141.0" text="Administrador">
+      <Button layoutX="247.0" layoutY="277.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="141.0" text="Inicar Sesion">
          <font>
             <Font name="Tw Cen MT Condensed" size="24.0" />
          </font>
@@ -40,5 +33,7 @@
             <Font name="ROGFonts-Regular" size="42.0" />
          </font>
       </Label>
+      <TextField layoutX="317.0" layoutY="149.0" promptText="Usuario" />
+      <TextField layoutX="317.0" layoutY="208.0" promptText="Contraseña" />
    </children>
 </AnchorPane>
