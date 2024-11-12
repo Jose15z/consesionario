@@ -10,7 +10,7 @@ public class Consesionario {
     private Collection <Vehiculo> vehiculos;
     private Collection <Transaccion> transacciones;
     
-    private SistemaAcceso sistemaAcceso;
+
     
     public Consesionario(String nombre){
         this.nombre = nombre;
@@ -36,14 +36,24 @@ public class Consesionario {
             
         }
     }
-    public SistemaAcceso getSistemaAcceso() {
-        return sistemaAcceso;
+    public boolean iniciarSesionEmpleado(String id, String contraseña){
+        boolean accesoValido = false;
+        for(Empleado empleado: empleados){
+            if(id.equals(empleado.getId())||contraseña.equals(empleado.getClaveAcceso())){
+                accesoValido = true;
+            }
+        }
+        return accesoValido;
     }
-
-    public void setSistemaAcceso(SistemaAcceso sistemaAcceso) {
-        this.sistemaAcceso = sistemaAcceso;
+    public boolean iniciarSesionAdministrador(String id, String contraseña){
+        boolean accesoValido = false;
+        for(Administrador administrador: administradores){
+            if(id.equals(administrador.getId())||contraseña.equals(administrador.getClaveAcceso())){
+                accesoValido = true;
+            }
+        }
+        return accesoValido;
     }
-
     public Collection<Transaccion> getTransacciones() {
         return transacciones;
     }
