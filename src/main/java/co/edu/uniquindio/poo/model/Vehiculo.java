@@ -1,11 +1,11 @@
 package co.edu.uniquindio.poo.model;
 
-public class Vehiculo implements Combustible {
-    private  String marca, condicion, modelo, cambios;
-    private  int cilindraje, VelMaxima, numeroPasajeros, precio;
+public class Vehiculo {
+    private  String id,  marca, condicion, modelo;
+    private  int cambios, cilindraje, VelMaxima, numeroPasajeros, precio;
    
 
-    public Vehiculo(String marca, String condicion, String modelo, String cambios, int cilindraje, int velMaxima, int numeroPasajeros, TipoCombustible tipoCombustible, int precio){
+    public Vehiculo(String id, String marca, String condicion, String modelo, int cambios, int cilindraje, int velMaxima, int numeroPasajeros, TipoCombustible tipoCombustible, int precio){
         this.marca = marca;
         this.condicion = condicion;
         this.modelo = modelo;
@@ -14,6 +14,7 @@ public class Vehiculo implements Combustible {
         this.VelMaxima = velMaxima;
         this.numeroPasajeros = numeroPasajeros;
         this.precio = precio;
+        this.id = id;
                
     }
     
@@ -41,11 +42,11 @@ public class Vehiculo implements Combustible {
         this.modelo = modelo;
     }
 
-    public String getCambios() {
+    public int getCambios() {
         return cambios;
     }
 
-    public void setCambios(String cambios) {
+    public void setCambios(int cambios) {
         this.cambios = cambios;
     }
 
@@ -81,5 +82,11 @@ public class Vehiculo implements Combustible {
         this.precio = precio;
     }
 
+    public String getId(){
+        return id;
+    } 
+    public void setId(String id){
+        this.id = id;
+    }
 
 }

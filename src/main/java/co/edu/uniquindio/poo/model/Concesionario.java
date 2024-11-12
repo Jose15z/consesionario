@@ -3,19 +3,21 @@ package co.edu.uniquindio.poo.model;
 import java.util.Collection;
 import java.util.LinkedList;
 
-public class Consesionario {
+public class Concesionario {
     private String nombre;
     private Collection<Empleado> empleados;
     private Collection<Administrador> administradores;
+    private Collection<Cliente> clientes;
     private Collection <Vehiculo> vehiculos;
     private Collection <Transaccion> transacciones;
     
 
     
-    public Consesionario(String nombre){
+    public Concesionario(String nombre){
         this.nombre = nombre;
         empleados = new LinkedList<>();
         administradores = new LinkedList<>();
+        clientes = new LinkedList<>();
         vehiculos = new LinkedList<>();
         transacciones = new LinkedList<>();
     }

@@ -11,7 +11,7 @@
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="ORANGE" height="53.0" layoutX="-25.0" stroke="TRANSPARENT" strokeType="INSIDE" width="668.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="ORANGE" height="53.0" layoutX="-25.0" layoutY="349.0" stroke="TRANSPARENT" strokeType="INSIDE" width="668.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d3f5f5" height="297.0" layoutX="-3.0" layoutY="59.0" stroke="TRANSPARENT" strokeType="INSIDE" width="624.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d3f5f5" height="297.0" layoutX="-3.0" layoutY="52.0" stroke="TRANSPARENT" strokeType="INSIDE" width="624.0" />
       <Label layoutX="120.0" layoutY="-7.0" prefHeight="80.0" prefWidth="518.0" text="TU CARRO UQ">
          <font>
             <Font name="ROGFonts-Regular" size="42.0" />

@@ -3,6 +3,7 @@ package co.edu.uniquindio.poo.model;
 public abstract class Transaccion {
      Vehiculo vehiculo;
      Empleado empleado;
+     Cliente cliente;
      Double valor;
 
     public Transaccion() {
