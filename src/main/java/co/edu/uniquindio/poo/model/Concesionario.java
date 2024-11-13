@@ -8,12 +8,10 @@ public class Concesionario {
     private Collection<Empleado> empleados;
     private Collection<Administrador> administradores;
     private Collection<Cliente> clientes;
-    private Collection <Vehiculo> vehiculos;
-    private Collection <Transaccion> transacciones;
-    
+    private Collection<Vehiculo> vehiculos;
+    private Collection<Transaccion> transacciones;
 
-    
-    public Concesionario(String nombre){
+    public Concesionario(String nombre) {
         this.nombre = nombre;
         empleados = new LinkedList<>();
         administradores = new LinkedList<>();
@@ -22,40 +20,173 @@ public class Concesionario {
         transacciones = new LinkedList<>();
     }
 
-    public boolean verificarEmpleado(String id){
+    public boolean verificarEmpleado(String id) {
         boolean estaEmpleado = false;
         for (Empleado empleado : empleados) {
-            if(empleado.getId().equals(id)){
+            if (empleado.getId().equals(id)) {
                 estaEmpleado = true;
             }
         }
         return estaEmpleado;
     }
-    
-    public void agregarEmpleado(Empleado empleado){
-        if(!verificarEmpleado(empleado.getId())){
+
+    public boolean verificarAdministrador(String id) {
+        boolean estaAdministrador = false;
+        for (Administrador administrador : administradores) {
+            if (administrador.getId().equals(id)) {
+                estaAdministrador = true;
+            }
+        }
+        return estaAdministrador;
+    }
+
+    public boolean verificarCliente(String id) {
+        boolean estaCliente = false;
+        for (Cliente cliente : clientes) {
+            if (cliente.getId().equals(id)) {
+                estaCliente = true;
+            }
+        }
+        return estaCliente;
+    }
+
+    public boolean verificarVehiculo(String id) {
+        boolean estaVehiculo = false;
+        for (Vehiculo vehiculo : vehiculos) {
+            if (vehiculo.getId().equals(id)) {
+                estaVehiculo = true;
+            }
+        }
+        return estaVehiculo;
+    }
+
+    public void agregarEmpleado(Empleado empleado) {
+        if (!verificarEmpleado(empleado.getId())) {
             empleados.add(empleado);
-            
+
         }
     }
-    public boolean iniciarSesionEmpleado(String id, String contraseña){
-        boolean accesoValido = false;
-        for(Empleado empleado: empleados){
-            if(id.equals(empleado.getId())||contraseña.equals(empleado.getClaveAcceso())){
-                accesoValido = true;
+
+    public void agregarAdminsitrador(Administrador administrador) {
+        if (!verificarAdministrador(administrador.getId())) {
+            administradores.add(administrador);
+        }
+    }
+
+    public void agregarCliente(Cliente cliente) {
+        if (!verificarCliente(cliente.getId())) {
+            clientes.add(cliente);
+        }
+    }
+
+    public void agregarVehiculo(Vehiculo vehiculo){
+        if (!verificarVehiculo(vehiculo.getId())){
+            vehiculos.add(vehiculo);
+        }
+    }
+
+    public void eliminarEmpleado(String id) {
+        for (Empleado empleado : empleados) {
+            if (empleado.getId().equals(id)) {
+                empleados.remove(empleado);
             }
         }
-        return accesoValido;
     }
-    public boolean iniciarSesionAdministrador(String id, String contraseña){
-        boolean accesoValido = false;
+
+    public void eliminarAdministrador(String id){
         for(Administrador administrador: administradores){
-            if(id.equals(administrador.getId())||contraseña.equals(administrador.getClaveAcceso())){
+            if(administrador.getId().equals(id)){
+                administradores.remove(administrador);
+            }
+        }
+    }
+
+    public void eliminarCliente(String id){
+        for(Cliente cliente: clientes){
+            if(cliente.getId().equals(id)){
+                clientes.remove(cliente);
+            }
+        }
+    }
+
+    public void eliminarVehiculo(String id){
+        for (Vehiculo vehiculo: vehiculos){
+            if(vehiculo.getId().equals(id)){
+                vehiculos.remove(vehiculo);
+            }
+        }
+    }
+
+    public Empleado buscarEmpleado(String id){
+        Empleado empleadoEncontrado = null;
+        for(Empleado empleado: empleados){
+            if(empleado.getId().equals(id)){
+                empleadoEncontrado = empleado;
+            }
+        }
+        return empleadoEncontrado;
+    }
+
+    public Administrador buscarAdministrador(String id){
+        Administrador administradorEncontrado = null;
+        for(Administrador administrador: administradores){
+            if(administrador.getId().equals(id)){
+                administradorEncontrado = administrador;
+            }
+        }
+        return administradorEncontrado;
+    }
+
+    public Cliente buscarCliente(String id){
+        Cliente clienteEncontrado = null;
+        for(Cliente cliente: clientes){
+            if(cliente.getId().equals(id)){
+                clienteEncontrado = cliente;
+            }
+        }
+        return clienteEncontrado;
+    }
+
+    public Vehiculo buscarVehiculo(String id){
+        Vehiculo vehiculoEncontrado = null;
+        for(Vehiculo vehiculo: vehiculos){
+            if(vehiculo.getId().equals(id)){
+                vehiculoEncontrado = vehiculo;
+            }
+        }
+        return vehiculoEncontrado;
+    }
+
+    public boolean iniciarSesionEmpleado(String id, String contraseña) {
+        boolean accesoValido = false;
+        for (Empleado empleado : empleados) {
+            if (id.equals(empleado.getId()) || contraseña.equals(empleado.getClaveAcceso())) {
                 accesoValido = true;
             }
         }
         return accesoValido;
     }
+
+    public boolean iniciarSesionAdministrador(String id, String contraseña) {
+        boolean accesoValido = false;
+        for (Administrador administrador : administradores) {
+            if (id.equals(administrador.getId()) || contraseña.equals(administrador.getClaveAcceso())) {
+                accesoValido = true;
+            }
+        }
+        return accesoValido;
+    }
+
+    public boolean iniciarSesionCliente(String id, String contraseña) {
+        boolean accesoValido = false;
+        for (Cliente cliente : clientes) {
+            if (id.equals(cliente.getId()) || contraseña.equals(cliente.getClaveAcceso())) {
+                accesoValido = true;
+            }
+        }
+        return accesoValido;
+    }
+
     public Collection<Transaccion> getTransacciones() {
         return transacciones;
     }
@@ -94,5 +225,13 @@ public class Concesionario {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public Collection<Cliente> getClientes() {
+        return clientes;
+    }
+
+    public void setClientes(Collection<Cliente> clientes) {
+        this.clientes = clientes;
     }
 }

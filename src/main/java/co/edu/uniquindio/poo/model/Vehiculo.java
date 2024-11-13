@@ -3,6 +3,8 @@ package co.edu.uniquindio.poo.model;
 public class Vehiculo {
     private  String id,  marca, condicion, modelo;
     private  int cambios, cilindraje, VelMaxima, numeroPasajeros, precio;
+    private TipoCombustible tipoCombustible;
+    private AtributosCombustible atributosCombustible;
    
 
     public Vehiculo(String id, String marca, String condicion, String modelo, int cambios, int cilindraje, int velMaxima, int numeroPasajeros, TipoCombustible tipoCombustible, int precio){
@@ -14,10 +16,19 @@ public class Vehiculo {
         this.VelMaxima = velMaxima;
         this.numeroPasajeros = numeroPasajeros;
         this.precio = precio;
-        this.id = id;
+        this.id = id; 
+        this.tipoCombustible = tipoCombustible;
+        this.atributosCombustible = crearAtributosCombustible(tipoCombustible);
                
     }
-    
+    private AtributosCombustible crearAtributosCombustible(TipoCombustible tipo) {
+        switch(tipo) {
+            case ELECTRICO: return new AtributosElectrico();
+            case HIBRIDO: return new AtributosHibridos();
+            default: return new AtributosCombustible();
+        }
+    }
+
     public String getMarca() {
         return marca;
     }
