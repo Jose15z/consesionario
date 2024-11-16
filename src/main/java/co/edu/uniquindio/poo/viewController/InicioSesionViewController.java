@@ -4,7 +4,7 @@ import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 
-public class InicioViewController {
+public class InicioSesionViewController {
     @FXML
     private ResourceBundle resources;
 
